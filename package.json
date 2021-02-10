@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "gh-pages -d dist"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxt/content": "^1.11.1",
@@ -23,6 +23,7 @@
     "gsap": "^3.6.0",
     "nuxt": "^2.14.12",
     "prism-themes": "^1.5.0",
+    "push-dir": "^0.4.1",
     "three": "^0.125.2",
     "vue-infinite-loading": "^2.4.5",
     "vue-masonry-css": "^1.0.3",
