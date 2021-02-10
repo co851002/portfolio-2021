@@ -1,11 +1,24 @@
 module.exports = {
-  purge: [
-    'components/**/*.vue',
-    'layouts/**/*.vue',
-    'pages/**/*.vue',
-    'plugins/**/*.js',
-    'nuxt.config.js'
-  ],
+  future: {
+    purgeLayersByDefault: true,
+  },
+  purge: {
+    layers: ['utilities'],
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      'nuxt.config.js'
+    ],
+  },
+  // purge: [
+  //   'components/**/*.vue',
+  //   'layouts/**/*.vue',
+  //   'pages/**/*.vue',
+  //   'plugins/**/*.js',
+  //   'nuxt.config.js'
+  // ],
   theme: {
     darkSelector: '.dark-mode',
     screens: {

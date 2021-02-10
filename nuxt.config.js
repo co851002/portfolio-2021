@@ -30,36 +30,7 @@ export default {
    ** Router configuration
    */
   router: {
-    scrollBehavior: async (to, from, savedPosition) => {
-      if (savedPosition) {
-        return savedPosition;
-      }
-
-      const findEl = async (hash, x) => {
-        return (
-          document.querySelector(hash) ||
-          new Promise((resolve, reject) => {
-            if (x > 50) {
-              return resolve();
-            }
-            setTimeout(() => {
-              resolve(findEl(hash, ++x || 1));
-            }, 100);
-          })
-        );
-      };
-
-      if (to.hash) {
-        let el = await findEl(to.hash);
-        if ("scrollBehavior" in document.documentElement.style) {
-          return window.scrollTo({ top: el.offsetTop, behavior: "smooth" });
-        } else {
-          return window.scrollTo(0, el.offsetTop);
-        }
-      }
-
-      return { x: 0, y: 0 };
-    }
+    base: 'https://co851002.github.io/portfolio-2021/'
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
