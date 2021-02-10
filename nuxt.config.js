@@ -3,6 +3,12 @@ import webpack from "webpack";
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
+   /*
+   ** Router configuration
+   */
+  router: {
+    base: 'https://co851002.github.io/portfolio-2021/'
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -26,12 +32,6 @@ export default {
     "vue-slick-carousel/dist/vue-slick-carousel.css",
     "vue-slick-carousel/dist/vue-slick-carousel-theme.css"
   ],
-  /*
-   ** Router configuration
-   */
-  router: {
-    base: 'https://co851002.github.io/portfolio-2021/'
-  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "~/plugins/infiniteloading", ssr: false },
