@@ -8,11 +8,11 @@
         <div
           v-for="article in articles"
           :key="article.slug"
-          class="relative mx-8 border-transparent rounded-xl overflow-hidden bg-current antialiased"
+          class="relative mx-8 border-transparent rounded-md overflow-hidden bg-current antialiased"
         >
           <div class="project shadow-lg">
             <div
-              class="tags flex absolute z-10 text-christo-light-3 w-full md:w-1/2 rounded-xl  "
+              class="tags flex absolute z-10 text-christo-light-3 w-full md:w-1/2 rounded-md  "
             >
               <div
                 class="2/3 py-2 px-2"
@@ -29,7 +29,7 @@
 
             <NuxtLink
               :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-              class="flex flex-1 rounted-xl  "
+              class="flex flex-1 rounted-md  "
             >
               <!-- <card
                 :padding="1"
@@ -63,7 +63,7 @@
                   <div class="">
                     <div
                       v-if="article.img"
-                      class="h-64 w-full bg-cover bg-top antialiased "
+                      class="h-64 w-full bg-cover bg-left-top antialiased "
                       :style="{ backgroundImage: `url(${article.img})` }"
                     ></div>
                     <div

@@ -3,7 +3,7 @@ title: Mobkoi Brandtech Studio
 description: Mobile advertising for luxury brands.
 # category: Front-End Developer
 year: 2017-2021
-img: 'index.jpg'
+img: '/portfolio-2021//images/projects/brandtech.jpg'
 alt: Mobile advertising for luxury brands.
 author: 
   name: co

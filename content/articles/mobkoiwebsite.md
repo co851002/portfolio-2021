@@ -3,7 +3,7 @@ title: Mobkoi Website
 description: Mobile advertising for luxury brands.
 # category: Front-End Developer
 year: 2017-2021
-img: '/images/projects/mobkoiwebsiteextr.jpg'
+img: '/portfolio-2021/images/projects/mobkoiwebsiteextr.jpg'
 alt: Mobile advertising for luxury brands.
 author: 
   name: co
