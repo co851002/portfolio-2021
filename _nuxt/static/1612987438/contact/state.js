@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002Fportfolio-2021\u002F_nuxt\u002Fstatic\u002F1612987438",layout:"default",error:null,state:{store:{}},serverRendered:a,routePath:"\u002Fcontact",config:{content:{dbHash:"78de204c"}},globalRefs:{},colorMode:{preference:b,value:b,unknown:a,forced:false}}}(true,"system"));
