@@ -7,7 +7,7 @@ export default {
    ** Router configuration
    */
   router: {
-    base: 'https://co851002.github.io/portfolio-2021/'
+    base: '/portfolio-2021/'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
