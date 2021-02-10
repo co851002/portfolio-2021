@@ -3,7 +3,7 @@ title: Streets Magazine Website
 description: Streets Magazine Website
 # category: Front-End Developer
 year: 2017-2021
-img: '/images/projects/streetsmagazine.jpg'
+img: '/portfolio-2021/images/projects/streetsmagazine.jpg'
 alt: Streets Magazine Website
 author: 
   name: co

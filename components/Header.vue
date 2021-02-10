@@ -3,7 +3,7 @@
     <nav class="flex items-top justify-between bg-christo-light-3 dark:bg-christo-dark-3 ">
       <div class="flex justify-between w-full">
         <NuxtLink to="/" class="flex align-middle justify-center p-4">
-          <logo />
+          <Logo />
           <div class="row ml-2 grid text-current ">
             <span class="font-semibold text-xl tracking-tight row leading-5"
               >Christo
@@ -40,7 +40,7 @@
 <script>
 import { store, mutations } from "@/store/store.js";
 import ColorModePicker from "@/components/ColorModePicker";
-import Logo from "@/assets/images/portfolio.svg?inline";
+import Logo from "@/components/menu/Logo";;
 import Burger from "@/components/menu/Burger";
 import HeaderMenu from "@/components/menu/HeaderMenu";
 
