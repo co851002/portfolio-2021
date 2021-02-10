@@ -174,12 +174,12 @@ export default {
   // },
   async fetch() {
     this.articles = await this.fetchData();
-    console.log(this.articles);
+    // console.log(this.articles);
   },
 
   methods: {
     fetchData() {
-      console.log(this.$content);
+      // console.log(this.$content);
       return this.$content("articles")
         .limit(this.limit)
         .sortBy("modifiedAt", "desc")
@@ -193,7 +193,7 @@ export default {
 
         if (additionalItems.length > 0) {
           this.articles.push(...additionalItems);
-          console.log("more");
+          // console.log("more");
           $state.loaded();
         } else {
           $state.complete();
