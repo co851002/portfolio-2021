@@ -1,0 +1,42 @@
+ Volume in drive C is 840EVO-250GB
+ Volume Serial Number is BAAC-EA9B
+
+ Directory of C:\portfolio\assets\images\stack
+
+02/01/2021  12:27 AM    <DIR>          .
+02/01/2021  12:27 AM    <DIR>          ..
+02/01/2021  12:13 AM             8,235 aws.svg
+02/01/2021  12:24 AM             3,882 blender.svg
+02/01/2021  12:23 AM             2,486 bootstrap.svg
+02/01/2021  12:23 AM             2,503 css-3.svg
+02/01/2021  12:27 AM                 0 dir.txt
+02/01/2021  12:23 AM               973 figma.svg
+02/01/2021  12:25 AM               436 filenames
+02/01/2021  12:23 AM             1,857 font-awesome.svg
+02/01/2021  12:12 AM             3,908 github-icon.svg
+02/01/2021  12:24 AM             1,556 google-analytics.svg
+02/01/2021  12:24 AM             1,728 google-cloud.svg
+02/01/2021  12:21 AM             3,565 graphql.svg
+02/01/2021  12:21 AM             1,840 heroku-icon.svg
+02/01/2021  12:23 AM             2,817 html-5.svg
+02/01/2021  12:12 AM             6,194 jamstack.svg
+02/01/2021  12:22 AM            18,988 mongodb.svg
+02/01/2021  12:21 AM             9,823 netlify.svg
+02/01/2021  12:23 AM             6,231 node-sass.svg
+02/01/2021  12:23 AM             3,356 nodejs-icon.svg
+02/01/2021  12:23 AM            15,149 nodejs.svg
+01/31/2021  11:55 PM            17,717 nuxt.png
+02/01/2021  12:10 AM            11,200 nuxt.svg
+02/01/2021  12:12 AM             7,909 react.svg
+02/01/2021  12:21 AM             3,396 shopify.svg
+02/01/2021  12:22 AM             1,124 sketch.svg
+02/01/2021  12:22 AM             2,501 squarespace.svg
+02/01/2021  12:22 AM             1,551 strapi-icon.svg
+02/01/2021  12:07 AM             7,937 vue.png
+02/01/2021  12:11 AM               569 vue.svg
+02/01/2021  12:11 AM               623 vuetifyjs.svg
+02/01/2021  12:22 AM             5,230 webflow.svg
+02/01/2021  12:21 AM             3,887 wix.svg
+02/01/2021  12:24 AM             2,963 wordpress-icon.svg
+              33 File(s)        162,134 bytes
+               2 Dir(s)   3,887,640,576 bytes free

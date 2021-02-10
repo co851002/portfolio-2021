@@ -1,0 +1,11 @@
+/* ~/assets/css/palettes.css */
+:root {
+  -green-default: #59981a;
+  -green-yellow: #ecf87f;
+  -green-lime: #81b622;
+  -green-olive: #3d550c;
+}
+
+.semi-transparent {
+  background: rgb(0, 0, 0, 0.1);
+}
