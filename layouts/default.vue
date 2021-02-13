@@ -2,7 +2,7 @@
   <div class="h-screen flex flex-col ">
     <Header />
       <Nuxt class="flex-1 " />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 

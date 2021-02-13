@@ -6,13 +6,23 @@
       <div
         id="container"
         ref="container"
-        class="w-full h-screen absolute top-0 up "
-      ></div>
-      <div class="flex flex-col align-middle justify-center z-10 fade">
-        <h1 class="text-4xl font-bold ">
-          Hi, my name is Christo. <br />
-          I'm a fullstack developer <br />based in London, UK
-        </h1>
+        class="w-full h-screen relative top-0 up "
+      >
+        <flat-surface-shader
+          type="webgl"
+          :light="{ ambient: '#16074d', diffuse: '#ff041c', draw: false, zOffset: 200 }"
+          :mesh="{ ambient: '#555555', diffuse: '#696969', zRange: 50}"
+          class="w-full h-full absolute shader"
+        >
+        </flat-surface-shader>
+        <div class="mask bg-white dark:bg-black bg-opacity-50 ">
+          <div class="flex flex-col align-middle justify-center z-10 fade">
+            <h1 class="text-4xl font-bold text-shadow text-current">
+              Hi, my name is Christo. <br />
+              I'm a fullstack developer <br />based in London, UK
+            </h1>
+          </div>
+        </div>
       </div>
 
       <!-- <h1 class="text-xl flex justify-center content-center text-center mt-6">
@@ -31,7 +41,7 @@
     </div> -->
     </section>
 
-    <section
+    <!-- <section
       class="home page flex justify-center align-middle text-center h-screen"
     >
       <about class="up" id="about"/>
@@ -41,15 +51,15 @@
       class="home page flex justify-center align-middle text-center h-screen "
     >
       <recents class="up" id="recents-projects"/>
-    </section>
+    </section> -->
     <!-- Need custom projects extract here -->
     <!-- <section>
       <projects/>
     </section> -->
-    <section
+    <!-- <section
       class="home page h-screen flex justify-center"
-    >
-      <!-- <svg
+    > -->
+    <!-- <svg
         class="fill-current stroke-current w-screen mt-16"
         preserveAspectRatio="none"
         viewBox="0 0 100 102"
@@ -60,10 +70,10 @@
       >
         <path d="M0 0 L50 100 L100 0 Z" class="w-screen"></path>
       </svg> -->
-      <div class="home page flex justify-center align-middle text-center h-1/2">
+    <!-- <div class="home page flex justify-center align-middle text-center h-1/2">
         <contact class="up" id="contact" />
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -76,8 +86,39 @@ import Projects from "@/pages/projects";
 import Contact from "@/pages/contact";
 import Recents from "@/pages/recents";
 
-
 export default {
+  transition: {
+    name: "scale",
+    mode: "out-in",
+    css: false,
+
+    beforeEnter(el) {
+      this.$gsap.set(el, {
+        opacity: 0,
+        scale: 0
+      });
+    },
+
+    enter(el, done) {
+      this.$gsap.to(el, {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: done
+      });
+    },
+
+    leave(el, done) {
+      this.$gsap.to(el, {
+        opacity: 0,
+        scale: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: done
+      });
+    }
+  },
   components: {
     Logo,
     About,
@@ -118,77 +159,74 @@ export default {
   methods: {
     init: function() {
       const gsap = this.$gsap;
-      let container = this.$refs.container;
-      this.camera = new THREE.PerspectiveCamera(
-        70,
-        container.clientWidth / container.clientHeight,
-        0.01,
-        10
-      );
-      this.camera.position.z = 1;
+      // let container = this.$refs.container;
+      // this.camera = new THREE.PerspectiveCamera(
+      //   70,
+      //   container.clientWidth / container.clientHeight,
+      //   0.01,
+      //   10
+      // );
+      // this.camera.position.z = 1;
 
-      this.scene = new THREE.Scene();
-      // this.scene.background = new THREE.Color( 0xff0000 );
+      // this.scene = new THREE.Scene();
+      // // this.scene.background = new THREE.Color( 0xff0000 );
 
-      let geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-      let material = new THREE.MeshNormalMaterial();
+      // let geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+      // let material = new THREE.MeshNormalMaterial();
 
-      this.mesh = new THREE.Mesh(geometry, material);
-      this.scene.add(this.mesh);
+      // this.mesh = new THREE.Mesh(geometry, material);
+      // this.scene.add(this.mesh);
 
-      this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      this.renderer.setSize(container.clientWidth, container.clientHeight);
-      container.appendChild(this.renderer.domElement);
-    },
-    animate: function() {
-      requestAnimationFrame(this.animate);
-      this.mesh.rotation.x += 0.01;
-      this.mesh.rotation.y += 0.02;
-      this.renderer.render(this.scene, this.camera);
-    },
-    goToSection: function(section, anim) {
-      this.$gsap.to(window, {
-        scrollTo: { y: section, autoKill: false },
-        duration: 1
-      });
-
-      if (anim) {
-        anim.restart();
-      }
+      // this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      // this.renderer.setSize(container.clientWidth, container.clientHeight);
+      // container.appendChild(this.renderer.domElement);
     }
+    // animate: function() {
+    //   requestAnimationFrame(this.animate);
+    //   this.mesh.rotation.x += 0.01;
+    //   this.mesh.rotation.y += 0.02;
+    //   this.renderer.render(this.scene, this.camera);
+    // }
+    // goToSection: function(section, anim) {
+    //   this.$gsap.to(window, {
+    //     scrollTo: { y: section, autoKill: false },
+    //     duration: 1
+    //   });
+
+    //   if (anim) {
+    //     anim.restart();
+    //   }
+    // }
   },
   mounted() {
     // const gsap = this.$gsap
     // const ExpoScaleEase = this.$ExpoScaleEase
     // const ScrollToPlugin = this.$ScrollToPlugin
     // const ScrollTrigger = this.$ScrollTrigger
-
     // gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, ExpoScaleEase)
-
-    this.sections = document.querySelectorAll("section");
-    this.sections.forEach(section => {
-      const intoAnim = this.$gsap
-        .timeline({ paused: true })
-        .from(section.querySelector(".up"), {
-          delay: 0.5,
-          xPercent: 200,
-          duration: 0.8
-        });
-
-      this.$ScrollTrigger.create({
-        trigger: section,
-        onEnter: () => this.goToSection(section, intoAnim)
-      });
-
-      this.$ScrollTrigger.create({
-        trigger: section,
-        start: `${window.innerHeight/3} bottom`,
-        onEnterBack: () => this.goToSection(section, intoAnim)
-      });
-    });
-    console.log(this.sections);
-    this.init();
-    this.animate();
+    // this.sections = document.querySelectorAll("section");
+    // this.sections.forEach(section => {
+    //   const intoAnim = this.$gsap
+    //     .timeline({ paused: true })
+    //     .from(section.querySelector(".up"), {
+    //       // delay: 0.5,
+    //       xPercent: 50,
+    //       opacity: 0,
+    //       duration: 0.5
+    //     });
+    //   this.$ScrollTrigger.create({
+    //     trigger: section,
+    //     onEnter: () => this.goToSection(section, intoAnim)
+    //   });
+    //   this.$ScrollTrigger.create({
+    //     trigger: section,
+    //     start: `${window.innerHeight/3} bottom`,
+    //     onEnterBack: () => this.goToSection(section, intoAnim)
+    //   });
+    // });
+    // // console.log(this.sections);
+    // this.init();
+    // this.animate();
   }
 };
 </script>
@@ -255,5 +293,25 @@ export default {
 .bw {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+}
+
+.text-shadow {
+  text-shadow: 4px 4px rgb(0 0 0 / 20%);
+}
+
+.mask {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5
+
+  /* color: rgba(255, 255, 255, 0.9); */
 }
 </style>

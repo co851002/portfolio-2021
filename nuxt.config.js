@@ -1,4 +1,5 @@
 import webpack from "webpack";
+import nodeExternals from 'webpack-node-externals'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -37,8 +38,10 @@ export default {
     { src: "~/plugins/infiniteloading", ssr: false },
     { src: "~/plugins/vue-slick-carousel", ssr: false },
     { src: "~/plugins/vue-masonry-css", mode: "client" },
-    { src: "~/plugins/vue-aos", mode: "client" },
-    { src: "~/plugins/co-utils" }
+    // { src: "~/plugins/vue-aos", mode: "client" },
+    { src: "~/plugins/co-utils" },
+    // { src: "~/plugins/fss" }
+    {src: '~plugins/vue-flat-surface-shader.js', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -97,7 +100,16 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,
-    transpile: ["gsap"]
+    transpile: ["gsap"],
+    extend(config) {
+      if (process.server) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vue-flat-surface-shader/]
+          })
+        ]
+      }
+    }
   },
   purgeCSS: {
     whitelist: ["dark-mode"],

@@ -1,9 +1,9 @@
 <template>
   <div class="font-sans antialiased fixed w-full z-10" id="app">
-    <nav class="flex items-top justify-between bg-christo-light-3 dark:bg-christo-dark-3 ">
+    <nav class="flex items-top justify-between  ">
       <div class="flex justify-between w-full">
         <NuxtLink to="/" class="flex align-middle justify-center p-4">
-          <Logo />
+          <Logo2 />
           <div class="row ml-2 grid text-current ">
             <span class="font-semibold text-xl tracking-tight row leading-5"
               >Christo
@@ -22,12 +22,13 @@
       <ul class="">
         <li v-for="item of nav" :key="item.name" class="" @click.prevent="toggle()">
           <NuxtLink
-            :to="{path: item.path, hash: item.hash}"
+            :to="item.path"
             class="no-underline block py-4 px-8 w-full text-left text-3xl font-bold text-current"
             >{{ item.name }}
           </NuxtLink>
           <!-- <NuxtLink
             :to="item.path"
+            :to="{path: item.path, hash: item.hash}"
             class="no-underline block py-4 px-8 w-full text-left text-3xl font-bold text-current"
             >{{ item.name }}
           </NuxtLink> -->
@@ -40,14 +41,16 @@
 <script>
 import { store, mutations } from "@/store/store.js";
 import ColorModePicker from "@/components/ColorModePicker";
-import Logo from "@/components/menu/Logo";;
+import Logo from "@/components/menu/Logo";
+import Logo2 from "@/components/menu/Logo2";;
+
 import Burger from "@/components/menu/Burger";
 import HeaderMenu from "@/components/menu/HeaderMenu";
 
 export default {
   components: {
     ColorModePicker,
-    Logo,
+    Logo2,
     Burger,
     HeaderMenu
   },
@@ -56,18 +59,18 @@ export default {
       nav: [
         {
           name: "About",
-          path: '/',
+          path: '/about',
           hash: "about",
         },
         {
           name: "Projects",
-          path: "/",
+          path: "/projects",
           hash: 'recents-projects'
 
         },
         {
           name: "Contact",
-          path: '/',
+          path: '/contact',
           hash: "contact"
         }
       ]
