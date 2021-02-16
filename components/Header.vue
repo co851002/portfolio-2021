@@ -1,5 +1,5 @@
 <template>
-  <div class="font-sans antialiased fixed w-full z-10" id="app">
+  <div class="font-sans antialiased fixed w-full z-10" >
     <nav class="flex items-top justify-between  ">
       <div class="flex justify-between w-full">
         <NuxtLink to="/" class="flex align-middle justify-center p-4">
@@ -15,14 +15,14 @@
         </NuxtLink>
       </div>
       <color-mode-picker class="py-6 flex justify-end" />
-      <burger class="overflow-hidden"></burger>
+      <burger class="overflow-hidden mr-4"></burger>
     </nav>
     <header-menu>
       <div class="h-1 py-0.5 w-screen bg-current"></div>
       <ul class="">
         <li v-for="item of nav" :key="item.name" class="" @click.prevent="toggle()">
           <NuxtLink
-            :to="item.path"
+            :to="{path: item.path, hash: item.hash}"
             class="no-underline block py-4 px-8 w-full text-left text-3xl font-bold text-current"
             >{{ item.name }}
           </NuxtLink>
@@ -41,7 +41,7 @@
 <script>
 import { store, mutations } from "@/store/store.js";
 import ColorModePicker from "@/components/ColorModePicker";
-import Logo from "@/components/menu/Logo";
+// import Logo from "@/components/menu/Logo";
 import Logo2 from "@/components/menu/Logo2";;
 
 import Burger from "@/components/menu/Burger";
@@ -59,18 +59,18 @@ export default {
       nav: [
         {
           name: "About",
-          path: '/about',
+          path: '/',
           hash: "about",
         },
         {
           name: "Projects",
           path: "/projects",
-          hash: 'recents-projects'
+          hash: ''
 
         },
         {
           name: "Contact",
-          path: '/contact',
+          path: '/',
           hash: "contact"
         }
       ]

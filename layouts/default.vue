@@ -1,12 +1,27 @@
 <template>
-  <div class="h-screen flex flex-col ">
+  <div class="h-screen flex flex-col " id="app">
     <Header />
       <Nuxt class="flex-1 " />
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
+<script>
+import Header from '@/components/header'
+
+export default {
+   components: {
+    Header
+  }
+
+}
+</script>
+
 <style lang="scss">
+#app {
+  overflow-x: hidden;
+}
+
 :root {
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -67,24 +82,27 @@ body {
 }
 </style>
 <style>
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
-}
+} */
 
 /* Track */
-::-webkit-scrollbar-track {
+
+/* ::-webkit-scrollbar-track {
   display: none;
-}
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+
+/* ::-webkit-scrollbar-thumb {
   display: none;
-}
+} */
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+
+/* ::-webkit-scrollbar-thumb:hover {
   @apply bg-christo-light-2;
-}
+} */
 
 /* Track */
 

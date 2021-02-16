@@ -4,11 +4,42 @@ import nodeExternals from 'webpack-node-externals'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
+  ssr: false,
    /*
    ** Router configuration
    */
   router: {
-    base: '/portfolio-2021/'
+    base: '/portfolio-2021/',
+    // scrollBehavior: async function(to, from, savedPosition) {
+    //   if (savedPosition) {
+    //     return savedPosition;
+    //   }
+
+    //   const findEl = async (hash, x = 0) => {
+    //     return (
+    //       document.querySelector(hash) ||
+    //       new Promise(resolve => {
+    //         if (x > 50) {
+    //           return resolve(document.querySelector("#app"));
+    //         }
+    //         setTimeout(() => {
+    //           resolve(findEl(hash, ++x || 1));
+    //         }, 100);
+    //       })
+    //     );
+    //   };
+
+    //   if (to.hash) {
+    //     let el = await findEl(to.hash);
+    //     if ("scrollBehavior" in document.documentElement.style) {
+    //       return window.scrollTo({ top: el.offsetTop, behavior: "smooth" });
+    //     } else {
+    //       return window.scrollTo(0, el.offsetTop);
+    //     }
+    //   }
+
+    //   return { x: 0, y: 0 };
+    // }
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -101,15 +132,18 @@ export default {
   build: {
     extractCSS: true,
     transpile: ["gsap"],
-    extend(config) {
-      if (process.server) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vue-flat-surface-shader/]
-          })
-        ]
-      }
-    }
+    // parallel: true,
+    // hardSource: true,
+    // cache: true,
+    // extend(config) {
+    //   if (process.server) {
+    //     config.externals = [
+    //       nodeExternals({
+    //         whitelist: [/^vue-flat-surface-shader/]
+    //       })
+    //     ]
+    //   }
+    // }
   },
   purgeCSS: {
     whitelist: ["dark-mode"],

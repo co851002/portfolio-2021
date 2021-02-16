@@ -6,21 +6,41 @@
       <div
         id="container"
         ref="container"
-        class="w-full h-screen relative top-0 up "
+        class="w-screen h-screen relative top-0 "
       >
         <flat-surface-shader
-          type="webgl"
-          :light="{ ambient: '#16074d', diffuse: '#ff041c', draw: false, zOffset: 200 }"
-          :mesh="{ ambient: '#555555', diffuse: '#696969', zRange: 50}"
-          class="w-full h-full absolute shader"
+          type="canvas"
+          :light="{
+            ambient: '#16074d',
+            diffuse: '#ff041c',
+            draw: false,
+            zOffset: 0
+          }"
+          :mesh="{ ambient: '#555555', diffuse: '#696969', zRange: 30 }"
+          class="w-screen h-screen absolute shader"
         >
         </flat-surface-shader>
-        <div class="mask bg-white dark:bg-black bg-opacity-50 ">
-          <div class="flex flex-col align-middle justify-center z-10 fade">
-            <h1 class="text-4xl font-bold text-shadow text-current">
-              Hi, my name is Christo. <br />
-              I'm a fullstack developer <br />based in London, UK
-            </h1>
+        <div
+          class="mask flex flex-col align-middle justify-center bg-white dark:bg-black "
+        ></div>
+        <div
+          class="flex flex-col align-middle justify-center absolute z-10 w-full h-full"
+        >
+          <h1 class="text-4xl font-bold text-shadow text-current">
+            Hi, my name is Christo. <br />
+            I'm a fullstack developer <br />based in London..., UK
+          </h1>
+          <div class="block mt-12">
+            <NuxtLink
+              :to="{ path:'/', hash: 'about' }"
+              class="uppercase underline text-sm py-4 px-8 w-full text-left font-bold text-current"
+              >About Me</NuxtLink
+            >
+            <NuxtLink
+              :to="{ path:'/', hash: 'projects' }"
+              class="uppercase underline text-sm py-4 px-8 w-full text-left font-bold text-current"
+              >Works
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -41,25 +61,28 @@
     </div> -->
     </section>
 
-    <!-- <section
+    <section
       class="home page flex justify-center align-middle text-center h-screen"
     >
-      <about class="up" id="about"/>
+      <about class="up" id="about" />
     </section>
 
-     <section
+    <section
       class="home page flex justify-center align-middle text-center h-screen "
     >
-      <recents class="up" id="recents-projects"/>
-    </section> -->
+      <div class="flex flex-col align-middle justify-center " id="projects">
+        <h1 class="text-4xl font-bold ">
+          Projects
+        </h1>
+      </div>
+      <!-- <recents class="up" id="recents-projects"/> -->
+    </section>
     <!-- Need custom projects extract here -->
     <!-- <section>
       <projects/>
     </section> -->
-    <!-- <section
-      class="home page h-screen flex justify-center"
-    > -->
-    <!-- <svg
+    <section class="home page h-screen flex justify-center">
+      <!-- <svg
         class="fill-current stroke-current w-screen mt-16"
         preserveAspectRatio="none"
         viewBox="0 0 100 102"
@@ -70,10 +93,11 @@
       >
         <path d="M0 0 L50 100 L100 0 Z" class="w-screen"></path>
       </svg> -->
-    <!-- <div class="home page flex justify-center align-middle text-center h-1/2">
+
+      <div class="home page flex justify-center align-middle text-center h-1/2">
         <contact class="up" id="contact" />
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 
@@ -306,11 +330,13 @@ export default {
 
   /* background-color: rgba(0, 0, 0, 0.6); */
   top: 0;
-  display: flex;
+
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  opacity: 0.5
+  flex-direction: column; */
+
+  opacity: 0.5;
 
   /* color: rgba(255, 255, 255, 0.9); */
 }
