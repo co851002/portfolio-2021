@@ -17,7 +17,7 @@
             zOffset: 0
           }"
           :mesh="{ ambient: '#555555', diffuse: '#696969', zRange: 30 }"
-          class="w-screen h-screen absolute shader"
+          class="w-screen h-screen absolute shader left-0"
         >
         </flat-surface-shader>
         <div
