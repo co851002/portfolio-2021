@@ -1,8 +1,8 @@
 <template>
-  <div class="font-sans antialiased fixed w-full z-10" >
+  <div class="font-sans antialiased fixed w-full z-10">
     <nav class="flex items-top justify-between  ">
-      <div class="flex justify-between w-full">
-        <NuxtLink to="/" class="flex align-middle justify-center p-4">
+      <div class="flex justify-between w-full" @click="toggleNavLogo()">
+        <nuxt-link to="/" class="flex align-middle justify-center p-4">
           <Logo2 />
           <div class="row ml-2 grid text-current ">
             <span class="font-semibold text-xl tracking-tight row leading-5"
@@ -12,7 +12,7 @@
               >Oosthuizen</span
             >
           </div>
-        </NuxtLink>
+        </nuxt-link>
       </div>
       <color-mode-picker class="py-6 flex justify-end" />
       <burger class="overflow-hidden mr-4"></burger>
@@ -20,9 +20,14 @@
     <header-menu>
       <div class="h-1 py-0.5 w-screen bg-current"></div>
       <ul class="">
-        <li v-for="item of nav" :key="item.name" class="" @click.prevent="toggle()">
+        <li
+          v-for="item of nav"
+          :key="item.name"
+          class=""
+          @click.prevent="toggle()"
+        >
           <NuxtLink
-            :to="{path: item.path, hash: item.hash}"
+            :to="{ path: item.path, hash: item.hash }"
             class="no-underline block py-4 px-8 w-full text-left text-3xl font-bold text-current"
             >{{ item.name }}
           </NuxtLink>
@@ -42,7 +47,7 @@
 import { store, mutations } from "@/store/store.js";
 import ColorModePicker from "@/components/ColorModePicker";
 // import Logo from "@/components/menu/Logo";
-import Logo2 from "@/components/menu/Logo2";;
+import Logo2 from "@/components/menu/Logo2";
 
 import Burger from "@/components/menu/Burger";
 import HeaderMenu from "@/components/menu/HeaderMenu";
@@ -59,24 +64,27 @@ export default {
       nav: [
         {
           name: "About",
-          path: '/',
-          hash: "about",
+          path: "/",
+          hash: "about"
         },
         {
           name: "Projects",
           path: "/projects",
-          hash: ''
-
+          hash: ""
         },
         {
           name: "Contact",
-          path: '/',
+          path: "/",
           hash: "contact"
         }
       ]
     };
   },
   methods: {
+    toggleNavLogo() {
+      store.isNavOpen ? mutations.toggleNav() : null;
+    },
+
     toggle() {
       mutations.toggleNav();
     }
@@ -85,7 +93,7 @@ export default {
     isBurgerActive() {
       return store.isNavOpen;
     }
-  },
+  }
 };
 </script>
 

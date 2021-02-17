@@ -11,3 +11,6 @@ export const mutations = {
     store.isNavOpen = !store.isNavOpen;
   }
 };
+
+export const strict = false
+

@@ -24,23 +24,23 @@
           class="mask flex flex-col align-middle justify-center bg-white dark:bg-black "
         ></div>
         <div
-          class="flex flex-col align-middle justify-center absolute z-10 w-full h-full"
+          class="flex flex-col align-middle justify-center absolute w-full h-full"
         >
           <h1 class="text-4xl font-bold text-shadow text-current">
             Hi, my name is Christo. <br />
             I'm a fullstack developer <br />based in London..., UK
           </h1>
           <div class="block mt-12">
-            <NuxtLink
-              :to="{ path:'/', hash: 'about' }"
+            <nuxt-link
+              :to="{ path: '/', hash: 'about' }"
               class="uppercase underline text-sm py-4 px-8 w-full text-left font-bold text-current"
-              >About Me</NuxtLink
+              >About Me</nuxt-link
             >
-            <NuxtLink
-              :to="{ path:'/', hash: 'projects' }"
+            <nuxt-link
+              :to="{ path: '/', hash: 'projects'}"
               class="uppercase underline text-sm py-4 px-8 w-full text-left font-bold text-current"
               >Works
-            </NuxtLink>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -61,10 +61,10 @@
     </div> -->
     </section>
 
-    <section
+    <section id="about"
       class="home page flex justify-center align-middle text-center h-screen"
     >
-      <about class="up" id="about" />
+      <about class="up"  />
     </section>
 
     <section
@@ -256,6 +256,10 @@ export default {
 </script>
 
 <style>
+.home {
+  overflow-x: hidden;
+}
+
 .carousel-wrapper {
   padding: 40px;
 }

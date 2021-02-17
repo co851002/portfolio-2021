@@ -4,43 +4,45 @@ import nodeExternals from 'webpack-node-externals'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
-  ssr: false,
+  // ssr: false,
    /*
    ** Router configuration
    */
   router: {
     base: '/portfolio-2021/',
-    // scrollBehavior: async function(to, from, savedPosition) {
-    //   if (savedPosition) {
-    //     return savedPosition;
-    //   }
+    scrollBehavior: async function(to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition;
+      }
 
-    //   const findEl = async (hash, x = 0) => {
-    //     return (
-    //       document.querySelector(hash) ||
-    //       new Promise(resolve => {
-    //         if (x > 50) {
-    //           return resolve(document.querySelector("#app"));
-    //         }
-    //         setTimeout(() => {
-    //           resolve(findEl(hash, ++x || 1));
-    //         }, 100);
-    //       })
-    //     );
-    //   };
+      const findEl = async (hash, x = 0) => {
+        return (
+          document.querySelector(hash) ||
+          new Promise(resolve => {
+            if (x > 50) {
+              return resolve(document.querySelector("#app"));
+            }
+            setTimeout(() => {
+              resolve(findEl(hash, ++x || 1));
+            }, 100);
+          })
+        );
+      };
 
-    //   if (to.hash) {
-    //     let el = await findEl(to.hash);
-    //     if ("scrollBehavior" in document.documentElement.style) {
-    //       return window.scrollTo({ top: el.offsetTop, behavior: "smooth" });
-    //     } else {
-    //       return window.scrollTo(0, el.offsetTop);
-    //     }
-    //   }
+      if (to.hash) {
+        console.log('here hash')
+        let el = await findEl(to.hash);
+        if ("scrollBehavior" in document.documentElement.style) {
+          return window.scrollTo({ top: el.offsetTop, behavior: "smooth" });
+        } else {
+          return window.scrollTo(0, el.offsetTop);
+        }
+      }
 
-    //   return { x: 0, y: 0 };
-    // }
+      return { x: 0, y: 0 };
+    }
   },
+
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -59,10 +61,10 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // 'vuesax/dist/vuesax.css',
-    "@/assets/main.css",
-    "@/assets/css/tailwind.scss",
-    "vue-slick-carousel/dist/vue-slick-carousel.css",
-    "vue-slick-carousel/dist/vue-slick-carousel-theme.css"
+    // "@/assets/main.css",
+    // "@/assets/css/tailwind.scss",
+    // "vue-slick-carousel/dist/vue-slick-carousel.css",
+    // "vue-slick-carousel/dist/vue-slick-carousel-theme.css"
   ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -76,7 +78,9 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  // components: true,
+  components: [ { path: '~/components', global: 'dev' } ],
+
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -130,7 +134,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCSS: true,
+    // extractCSS: true,
     transpile: ["gsap"],
     // parallel: true,
     // hardSource: true,

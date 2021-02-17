@@ -7,20 +7,20 @@
 </template>
 
 <script>
-import Header from '@/components/header'
+// import Header from '@/components/header'
 
 export default {
-   components: {
-    Header
-  }
+  //  components: {
+  //   Header
+  // }
 
 }
 </script>
 
 <style lang="scss">
-#app {
-  overflow-x: hidden;
-}
+// #app {
+//   overflow-x: hidden;
+// }
 
 :root {
   word-spacing: 1px;
