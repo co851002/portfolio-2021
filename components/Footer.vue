@@ -91,9 +91,11 @@
     <div
       class=" block mx-auto px-6 py-6 flex-wrap flex-row items-center justify-center w-screen"
     >
-      <p class="small-text text-muted text-center" data-v-5b3f4770="">
-        © {{ this.$getYear }} created by
-        <NuxtLink to="/about" aria-label="About me" class="hover">
+      <p class="text-xs text-muted text-center" data-v-5b3f4770="">
+        © {{ this.$getYear }} created with
+        <a href="https://nuxtjs.org/">Nuxt</a> and
+        <a href="https://tailwindcss.com/">Tailwind CSS</a> by
+        <NuxtLink :to="{ path: '/', hash: '#about' }" aria-label="About me" class="hover">
           Christo Oosthuizen
         </NuxtLink>
       </p>

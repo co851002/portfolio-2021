@@ -22,7 +22,7 @@
         <img :src="article.img" :alt="article.alt" class="absolute " />
         <div class="overlay"></div>
         <div class="absolute top-32 left-32 text-white">
-          <NuxtLink to="/"><Logo /></NuxtLink>
+          <!-- <NuxtLink to="/"><Logo /></NuxtLink> -->
           <div class="mt-4 ml-4 flex uppercase text-sm">
             <p class="mr-3">
               {{ formatDate(article.updatedAt) }}

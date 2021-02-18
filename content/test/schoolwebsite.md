@@ -12,7 +12,6 @@ author:
   img: null
 tags: 
   - javascript
-  - jquery
 ---
 
 Welcome to my first blog post using content module

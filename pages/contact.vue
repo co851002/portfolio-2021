@@ -2,7 +2,7 @@
   <div
     class="relative flex items-top justify-center min-h-screen bg-transparent sm:items-center sm:pt-0"
   >
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto my-auto sm:px-6 lg:px-8">
       <div class="overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-2">
           <div class="p-6 mr-2 sm:rounded-lg">

@@ -82,27 +82,27 @@ body {
 }
 </style>
 <style>
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
-} */
+}
 
 /* Track */
 
-/* ::-webkit-scrollbar-track {
-  display: none;
-} */
+::-webkit-scrollbar-track {
+  @apply bg-christo-dark-2;
+}
 
 /* Handle */
 
-/* ::-webkit-scrollbar-thumb {
-  display: none;
-} */
+::-webkit-scrollbar-thumb {
+  @apply bg-christo-dark-1;
+}
 
 /* Handle on hover */
 
-/* ::-webkit-scrollbar-thumb:hover {
-  @apply bg-christo-light-2;
-} */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-christo-light-1;
+}
 
 /* Track */
 
