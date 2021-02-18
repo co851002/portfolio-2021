@@ -74,8 +74,10 @@
         <h1 class="text-4xl font-bold ">
           Projects
         </h1>
+              <!-- <recents class="up" id="recents-projects"/> -->
+              <blog-test/>
+
       </div>
-      <!-- <recents class="up" id="recents-projects"/> -->
     </section>
     <!-- Need custom projects extract here -->
     <!-- <section>

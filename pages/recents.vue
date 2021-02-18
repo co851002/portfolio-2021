@@ -3,14 +3,14 @@
     <div class=" p-4 mt-12 max-w-6xl">
       <h1 class="font-bold text-4xl p-8">Recent Projects</h1>
 
-      <div class="wrapper flex">
+      <div class="wrapper ">
         <!-- <VueSlickCarousel v-bind="slickOptions" class=""> -->
         <div
           v-for="article in articles"
           :key="article.slug"
-          class="relative mx-8 border-transparent rounded-md overflow-hidden bg-current antialiased"
+          class="relative mx-8 border-transparent rounded-md overflow-hidden bg-current antialiased flex flex-wrap -mx-1 lg:-mx-4"
         >
-          <div class="project shadow-lg">
+          <div class="project shadow-lg w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
             <div
               class="tags flex absolute z-10 text-christo-light-3 w-full md:w-1/2 rounded-md  "
             >
