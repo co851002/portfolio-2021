@@ -1,6 +1,6 @@
 <template>
   <div class="font-sans antialiased fixed w-full z-10">
-    <nav class="flex items-top justify-between  ">
+    <nav class="flex items-top justify-between bg-christo-semi-1 dark:bg-transparent ">
       <div class="flex justify-between w-full" @click="toggleNavLogo()">
         <nuxt-link to="/" class="flex align-middle justify-center p-4">
           <Logo2 />

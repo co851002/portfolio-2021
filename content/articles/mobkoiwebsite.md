@@ -1,6 +1,6 @@
 ---
 title: Mobkoi Website
-description: Mobile advertising for luxury brands.
+description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
 # category: Front-End Developer
 year: 2017-2021
 img: '/portfolio-2021/images/projects/mobkoiwebsiteextr.jpg'

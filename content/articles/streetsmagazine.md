@@ -1,6 +1,6 @@
 ---
 title: Streets Magazine Website
-description: Streets Magazine Website
+description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque.
 # category: Front-End Developer
 year: 2017-2021
 img: '/portfolio-2021/images/projects/streetsmagazine.jpg'

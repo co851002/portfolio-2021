@@ -49,9 +49,9 @@
               primary-color="christo-dark-3"
               secondary-color="christo-light-3"
               border-radius="lg"
-              class="mb-5"
+              class="mb-5 text-current"
             >
-              <card-header class="text-black">
+              <card-header class="text-current">
                 <!-- <span> <v-icon name="book-open" scale="1" /> </span> -->
                 <ul class="flex flex-wrap">
                 <li

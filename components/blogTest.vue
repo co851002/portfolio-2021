@@ -1,60 +1,35 @@
 <template>
   <div>
-    <div class="container my-12 mx-auto px-4 md:px-12">
-      <div class="flex flex-wrap -mx-1 lg:-mx-4">
-        <!-- Column -->
-        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-          <!-- Article -->
-          <article class="overflow-hidden rounded-lg shadow-lg">
-            <a href="#">
-              <img
-                alt="Placeholder"
-                class="block h-auto w-full"
-                src="https://picsum.photos/600/400/?random"
-              />
-            </a>
-
-            <header
-              class="flex items-center justify-between leading-tight p-2 md:p-4"
-            >
-              <h1 class="text-lg">
-                <a class="no-underline hover:underline text-black" href="#">
-                  Article Title
-                </a>
-              </h1>
-              <p class="text-grey-darker text-sm">
-                11/1/19
-              </p>
-            </header>
-
-            <footer
-              class="flex items-center justify-between leading-none p-2 md:p-4"
-            >
-              <a
-                class="flex items-center no-underline hover:underline text-black"
-                href="#"
-              >
-                <img
-                  alt="Placeholder"
-                  class="block rounded-full"
-                  src="https://picsum.photos/32/32/?random"
-                />
-                <p class="ml-2 text-sm">
-                  Author Name
-                </p>
-              </a>
-              <a
-                class="no-underline text-grey-darker hover:text-red-dark"
-                href="#"
-              >
-                <span class="hidden">Like</span>
-                <i class="fa fa-heart"></i>
-              </a>
-            </footer>
-          </article>
-          <!-- END Article -->
+    <div class="container my-12 mx-auto px-4 md:px-12 text-current text-left">
+      <!-- component -->
+      <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
+        <img
+          class="w-full"
+          src="https://tailwindcss.com/img/card-top.jpg"
+          alt="Sunset in the mountains"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <p class="text-grey-darker text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+          </p>
         </div>
-        <!-- END Column -->
+        <div class="px-6 py-4">
+          <span
+            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+            >#photography</span
+          >
+          <span
+            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+            >#travel</span
+          >
+          <span
+            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+            >#winter</span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -67,4 +42,3 @@ export default {
   }
 };
 </script>
-

@@ -21,24 +21,24 @@
         >
         </flat-surface-shader>
         <div
-          class="mask flex flex-col align-middle justify-center bg-white dark:bg-black "
+          class="mask flex flex-col align-middle justify-center bg-black "
         ></div>
         <div
           class="flex flex-col align-middle justify-center absolute w-full h-full"
         >
-          <h1 class="text-3xl xs:text-2xl font-bold text-shadow text-current">
+          <h1 class="text-3xl xs:text-2xl font-bold text-shadow text-white">
             Hi, my name is Christo. <br />
             I'm a fullstack developer <br />based in London, UK
           </h1>
           <div class="block mt-12">
             <nuxt-link
               :to="{ path: '/', hash: 'about' }"
-              class="uppercase border-b-2 text-sm py-2 mx-8 w-full text-left font-bold text-current"
+              class="uppercase border-b-2 text-sm py-2 mx-8 w-full text-left font-bold text-white"
               >About Me</nuxt-link
             >
             <nuxt-link
               :to="{ path: '/', hash: 'projects'}"
-              class="uppercase border-b-2 text-sm py-2 mx-8 w-full text-left font-bold text-current"
+              class="uppercase border-b-2 text-sm py-2 mx-8 w-full text-left font-bold text-white"
               >Works
             </nuxt-link>
           </div>
@@ -75,7 +75,7 @@
           Projects
         </h1>
               <!-- <recents class="up" id="recents-projects"/> -->
-              <blog-test/>
+              <recents/>
 
       </div>
     </section>

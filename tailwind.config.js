@@ -48,6 +48,7 @@ module.exports = {
           'light-2': '#a0aec0',
           'dark-3': '#00040a',
           'light-3': '#cccccc',
+          'semi-1': '#ffffff1a'
         },
       },
       fontSize: {
